@@ -18,7 +18,7 @@ def product_add_to_cart(page:Page):
 @pytest.fixture
 def logged_user(page , login_page):
     login_page.open()
-    login_page.login("problem_user","secret_sauce")
+    login_page.login("standard_user","secret_sauce")
     return page
 
 @pytest.fixture
