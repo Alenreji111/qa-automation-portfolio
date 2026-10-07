@@ -14,11 +14,11 @@ class CheckoutPage:
     def click_checkout_button(self):
         self.checkout_button.click()
 
-    def open_checkout_steps(self):
+    def open_checkout_stepone(self):
         self.page.goto("https://www.saucedemo.com/checkout-step-one.html")
-        
-    
 
+    
+        
     def after_click_checkout(self,firstname,lastname,zipcode):
         self.firstname_form.fill(firstname)
         self.lastname_form.fill(lastname)
