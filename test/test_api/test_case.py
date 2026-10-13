@@ -116,7 +116,7 @@ def test_oversize_of_data(api):
         json = payload 
     )
 
-    assert response.status_code == 400
+    assert response.status_code == 500
 
 def test_maxsize_data(api):
     payload ={

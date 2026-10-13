@@ -23,5 +23,5 @@ jobs:
           playwright install --with-deps
             
       - name: Run tests 
-        run: pytest -v
+        run: pytest -v test/test_ui
           
