@@ -10,4 +10,6 @@ COPY . .
 
 RUN playwright install --with-deps chromium
 
-CMD ["pytest","-v"]
+CMD ["pytest","-v" ]
+
+ADD test/conftest.py  /app

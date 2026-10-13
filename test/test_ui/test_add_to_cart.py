@@ -21,3 +21,5 @@ def test_changeofbutton(page,logged_user,product_add_to_cart):
         path="artifacts/changeofbutton.png",
         full_page=True
     )
+
+
