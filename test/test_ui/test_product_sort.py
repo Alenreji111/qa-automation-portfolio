@@ -1,6 +1,5 @@
 from playwright.sync_api import Page
-# from pages.inventory_details import InventoryDetails
-from test.conftest import logged_user,inventory_item_details
+
 
 def test_sorting_inventory_za(page,logged_user,inventory_item_details):
     actual_result=inventory_item_details.sorting_items_za()

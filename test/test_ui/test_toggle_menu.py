@@ -1,6 +1,6 @@
 from playwright.sync_api import Page 
 from playwright.sync_api import expect 
-from test.conftest import toggle_menu,logged_user,dynamic_catalog
+
 
 
 def test_all_item_menu(page,logged_user,toggle_menu):

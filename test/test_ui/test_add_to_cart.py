@@ -1,6 +1,6 @@
 from playwright.sync_api import Page 
 from playwright.sync_api import expect
-from test.conftest import product_add_to_cart,logged_user
+
 
 
 def test_addtocard_product(page,logged_user,product_add_to_cart):
