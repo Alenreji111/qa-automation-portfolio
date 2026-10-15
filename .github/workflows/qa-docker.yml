@@ -13,12 +13,12 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Building docker image 
-      runs: docker build -t qa-learning .
+      run: docker build -t qa-learning .
 
     - name: Run docker 
-      runs: docker run --rm qa-learning 
+      run: docker run --rm qa-learning 
 
-      
+
 
     
 
