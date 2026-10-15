@@ -26,6 +26,13 @@ jobs:
           docker run --rm \
             -v "${{ github.workspace }}/docker-results:/app/test-results" \
             qa-learning
+
+      - name: Upload test artifacts 
+        if: always()
+        uses: actions/artifacts@v4
+        with:
+          name: playwright-results
+          path: docker-results/
       
 
 
