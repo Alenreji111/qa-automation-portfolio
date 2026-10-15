@@ -1,4 +1,4 @@
-name: QA docker pipelin workflow
+name: QA Docker 
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    run: ubuntu-latest
+    runs-on: ubuntu-latest
 
   steps:
     - name: Checkout repository
