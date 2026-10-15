@@ -1,4 +1,4 @@
-name: QA Docker 
+name: QA Docker Tests
 
 on:
   push:
@@ -8,15 +8,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-  steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Building docker image 
-      run: docker build -t qa-learning .
-
-    - name: Run docker 
-      run: docker run --rm qa-learning 
+      - name: Building docker image 
+        run: docker build -t qa-learning .
+  
+      - name: Run docker 
+        run: docker run --rm qa-learning 
 
 
 
