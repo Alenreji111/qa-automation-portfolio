@@ -18,6 +18,15 @@ jobs:
       - name: Run docker 
         run: docker run --rm qa-learning 
 
+      - name: Create results directory
+        run: mkdir -p docker-results
+
+      - name: Run QA tests
+        run: |
+          docker run --rm \
+            -v "${{ github.workspace }}/docker-results:/app/test-results" \
+            qa-learning
+      
 
 
     
