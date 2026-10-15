@@ -1,20 +1,23 @@
 from playwright.sync_api import Page
+import pytest
 
 
 
-
+@pytest.mark.smoke
+@pytest.mark.regression
 def test_valid_user(page,login_page):
     login_page.open()
     login_page.login("standard_user","secret_sauce")
     assert page.url != "https://www.saucedemo.com/"
    
-
+@pytest.mark.regression
 def test_invalid_user(page,login_page):
     login_page.open()
     login_page.invalid_login("testuser","password")
     login_page.verify_wrong_username()
     assert page.url == "https://www.saucedemo.com/"
 
+@pytest.mark.regression
 def test_empty_username(page,login_page):
     login_page.open()
     login_page.invalid_login("","secret_sauce")
@@ -24,6 +27,7 @@ def test_empty_username(page,login_page):
     )
     assert page.url =="https://www.saucedemo.com/"
 
+@pytest.mark.regression
 def test_empty_password(page,login_page):
     login_page.open()
     login_page.invalid_login("standard_user","")
@@ -35,13 +39,14 @@ def test_empty_password(page,login_page):
     assert page.url =="https://www.saucedemo.com/"
 
 
+@pytest.mark.regression
 def test_empty_both_input(page,login_page):
     login_page.open()
     login_page.invalid_login("","")
     login_page.verify_empty_username_validation()
     assert page.url == "https://www.saucedemo.com/"
 
-
+@pytest.mark.regression
 def test_product_cart(page,logged_user,product_added_to_cart):
     assert page.url == "https://www.saucedemo.com/cart.html"
     page.screenshot(
@@ -49,6 +54,7 @@ def test_product_cart(page,logged_user,product_added_to_cart):
         full_page=True
     )
 
+@pytest.mark.regression
 def test_get_item_detail(page,logged_user,inventory_item_details):
     inventory_item_details.inventory_detail_of_item()
     inventory_item_details.open()
