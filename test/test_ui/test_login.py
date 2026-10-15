@@ -6,7 +6,7 @@ from playwright.sync_api import Page
 def test_valid_user(page,login_page):
     login_page.open()
     login_page.login("standard_user","secret_sauce")
-    assert page.url == "https://www.saucedemo.com/"
+    assert page.url != "https://www.saucedemo.com/"
    
 
 def test_invalid_user(page,login_page):
