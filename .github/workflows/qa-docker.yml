@@ -31,7 +31,7 @@ jobs:
 
       - name: Run docker image 
         run: docker run --rm qa-learning pytest -m regression -v
-        
+
   test:
     runs-on: ubuntu-latest
 
@@ -52,7 +52,13 @@ jobs:
         run: |
           docker run --rm \
             -v "${{ github.workspace }}/docker-results:/app/test-results" \
-            qa-learning
+            qa-learning \
+            pytest -v test/test_ui --trace=on
+
+      - name: Check test artifacts 
+        if: always()
+        run: |
+          find docker-results -type f -print
 
       - name: Upload test artifacts 
         if: always()
