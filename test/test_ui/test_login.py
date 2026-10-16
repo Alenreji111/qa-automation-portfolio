@@ -7,7 +7,7 @@ import pytest
 @pytest.mark.regression
 def test_valid_user(page,login_page):
     login_page.open()
-    login_page.login("standard_user","secret_sauce")
+    login_page.login("standard_use","secret_sauce")
     assert page.url != "https://www.saucedemo.com/"
    
 @pytest.mark.regression
