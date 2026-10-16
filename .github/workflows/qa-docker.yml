@@ -5,6 +5,33 @@ on:
   pull_request:
 
 jobs:
+
+  smoke-test: 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository 
+        uses: actions/checkout@v4
+
+      - name: Build docker image 
+        run: docker build -t qa-learning .
+
+      - name: Run docker image 
+        run: docker run --rm qa-learning pytest -m smoke -v
+
+  regression-test:
+    runs-on: ubuntu-latest 
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build docker image 
+        run: docker build -t qa-learning .
+
+      - name: Run docker image 
+        run: docker run --rm qa-learning pytest -m regression -v
+        
   test:
     runs-on: ubuntu-latest
 
