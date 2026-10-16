@@ -53,7 +53,7 @@ jobs:
           docker run --rm \
             -v "${{ github.workspace }}/docker-results:/app/test-results" \
             qa-learning \
-            pytest -v --trace=on
+            pytest -v test/test_ui --tracing=on
 
       - name: Check test artifacts 
         if: always()
