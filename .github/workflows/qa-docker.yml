@@ -59,6 +59,8 @@ jobs:
         if: always()
         run: |
           find docker-results -type f -print
+          echo "===== JUNIT XML ====="
+          cat docker-results/junit/results.xml
 
       - name: Upload test results 
         if: always()
