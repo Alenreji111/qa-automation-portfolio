@@ -60,11 +60,11 @@ jobs:
         run: |
           find docker-results -type f -print
 
-      - name: Upload test artifacts 
+      - name: Upload test results 
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-results
+          name: qa-test-results
           path: docker-results/
       
 
