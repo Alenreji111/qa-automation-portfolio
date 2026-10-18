@@ -25,8 +25,8 @@ def logged_user(page , login_page):
 def product_added_to_cart(page,product_add_to_cart):
     product_add_to_cart.click_add_to_cart()
     product_add_to_cart.checking_product_in_add_to_cart()
-    product_add_to_cart.verify_product_in_cart()
     product_add_to_cart.open()
+    product_add_to_cart.verify_product_in_cart()
     
     return page
 

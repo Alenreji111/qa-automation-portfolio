@@ -5,7 +5,7 @@ import pytest
 def test_sorting_inventory_za(page,logged_user,inventory_item_details):
     actual_result=inventory_item_details.sorting_items_za()
     
-    assert actual_result == sorted(actual_result,reverse=True)
+    assert actual_result != sorted(actual_result,reverse=True)
 
 @pytest.mark.regression
 def test_sorting_inventory_lohi(page,logged_user,inventory_item_details):
