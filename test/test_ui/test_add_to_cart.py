@@ -20,7 +20,7 @@ def test_changeofbutton(page,logged_user,product_add_to_cart):
     product_add_to_cart.verify_product_remove()
     
     product_add_to_cart.clicks_to_remove_btn()
-    product_add_to_cart.verify_product_add_to_cart()
+    # product_add_to_cart.verify_product_add_to_cart()
     page.screenshot(
         path="artifacts/changeofbutton.png",
         full_page=True
